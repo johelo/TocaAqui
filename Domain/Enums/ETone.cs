@@ -22,7 +22,6 @@
         Fflat,
         Gflat,
         Aflat,
-        Bflat,
-
+        Bflat
     }
 }
