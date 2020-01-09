@@ -1,35 +1,52 @@
+using System;
 using br.mus.tocaaqui.domain.enums;
 
 namespace br.mus.tocaaqui.domain.entities
 {
     public abstract class StringsInstrument : Instrument
     {
-        public StringsInstrument(string name, EInstrumentFamily instrumentFamily, ETone tune, int stringQty)
+        public StringsInstrument(string name, EInstrumentFamily instrumentFamily, ETone tune, int stringsQty)
             : base(name, EInstrumentFamily.strings)
         {
             Tune = tune;
-            StringQty = stringQty;
-            Wire = new Wire[StringQty];
+            StringsQty = stringsQty;
+            Strings = new Wire[StringsQty];
         }
 
         public ETone Tune { get; private set; }
-        public int StringQty { get; private set; }
-        public Wire[] Wire { get { return Wire; } private set { } }
+        public int StringsQty { get; private set; }
+        public Wire[] Strings { get { return Strings; } private set { } }
+
+        public void setStringsQty(int stringsQty)
+        {
+            if (stringsQty > 0)
+            {
+                StringsQty = stringsQty;
+
+                var tmpStrings = Strings;
+                Array.Resize(ref tmpStrings, stringsQty);
+                Strings = tmpStrings;
+            }
+        }
 
         public void addString(Wire wire, int position)
         {
-            if (position > 0 && position <= StringQty)
+            if (position > 0 && position <= StringsQty)
             {
-                Wire[position - 1] = wire;
+                Strings[position - 1] = wire;
             }
         }
 
-        public void addStrings(Wire[] wires)
+        public void addStrings(Wire[] strings)
         {
-            if (wires.Length == StringQty)
+            if (strings.Length == StringsQty)
             {
-                Wire = wires;
+                Strings = strings;
             }
         }
+
+        // public abstract void getTone(int wire, int position);
+
+        // public abstract void getTone(int[][] wire);
     }
 }

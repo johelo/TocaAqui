@@ -16,7 +16,7 @@ namespace br.mus.tocaaqui.tests.domain
             //When
 
             //Then
-            Assert.Equal(stringsQty, violaCaipira.StringQty);
+            Assert.Equal(stringsQty, violaCaipira.StringsQty);
         }
     }
 
@@ -27,16 +27,16 @@ namespace br.mus.tocaaqui.tests.domain
         {
             base.addStrings(new Wire[]
                 {
+                    new Wire(ETone.E, 4),
+                    new Wire(ETone.E, 4),
+                    new Wire(ETone.B, 4),
+                    new Wire(ETone.B, 4),
+                    new Wire(ETone.Gsharp, 4),
+                    new Wire(ETone.Gsharp, 3),
+                    new Wire(ETone.E, 4),
                     new Wire(ETone.E, 3),
-                    new Wire(ETone.E, 4),
-                    new Wire(ETone.Bsharp, 3),
-                    new Wire(ETone.Bsharp, 4),
-                    new Wire(ETone.G, 3),
-                    new Wire(ETone.G, 4),
-                    new Wire(ETone.Bsharp, 4),
-                    new Wire(ETone.Bsharp, 4),
-                    new Wire(ETone.E, 4),
-                    new Wire(ETone.E, 4)
+                    new Wire(ETone.B, 4),
+                    new Wire(ETone.B, 3)
                 }
             );
         }
