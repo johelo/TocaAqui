@@ -5,7 +5,7 @@ namespace br.mus.tocaaqui.domain.entities
 {
     public abstract class StringsInstrument : Instrument
     {
-        public StringsInstrument(string name, EInstrumentFamily instrumentFamily, ETone tune, int stringsQty)
+        public StringsInstrument(string name, ETone tune, int stringsQty)
             : base(name, EInstrumentFamily.strings)
         {
             Tune = tune;
@@ -17,17 +17,17 @@ namespace br.mus.tocaaqui.domain.entities
         public int StringsQty { get; private set; }
         public Wire[] Strings { get { return Strings; } private set { } }
 
-        public void setStringsQty(int stringsQty)
-        {
-            if (stringsQty > 0)
-            {
-                StringsQty = stringsQty;
+        // public void setStringsQty(int stringsQty)
+        // {
+        //     if (stringsQty > 0)
+        //     {
+        //         StringsQty = stringsQty;
 
-                var tmpStrings = Strings;
-                Array.Resize(ref tmpStrings, stringsQty);
-                Strings = tmpStrings;
-            }
-        }
+        //         var tmpStrings = Strings;
+        //         Array.Resize(ref tmpStrings, stringsQty);
+        //         Strings = tmpStrings;
+        //     }
+        // }
 
         public void addString(Wire wire, int position)
         {

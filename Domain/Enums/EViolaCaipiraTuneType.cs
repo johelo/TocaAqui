@@ -5,6 +5,7 @@
         Cebolao,
         RioAbaixo,
         RioAcima,
-        Boiadeira
+        Boiadeira,
+        Natural
     }
 }
