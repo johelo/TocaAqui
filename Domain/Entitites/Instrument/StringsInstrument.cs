@@ -15,7 +15,7 @@ namespace br.mus.tocaaqui.domain.entities
 
         public ETone Tune { get; private set; }
         public int StringsQty { get; private set; }
-        public Wire[] Strings { get { return Strings; } private set { } }
+        public Wire[] Strings { get; private set; }
 
         // public void setStringsQty(int stringsQty)
         // {
